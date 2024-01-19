@@ -2,9 +2,9 @@
   ros__parameters:
     verbose: false
 
-    planning_hz: 10.0
+    planning_hz: 20.0
     backward_path_length: 5.0
-    forward_path_length: 300.0
+    forward_path_length: 150.0
     backward_length_buffer_for_end_of_pull_over: 5.0
     backward_length_buffer_for_end_of_pull_out: 5.0
     minimum_pull_over_length: 16.0
@@ -19,12 +19,12 @@
     turn_signal_shift_length_threshold: 0.3
     turn_signal_on_swerving: true
 
-    path_interval: 2.0
+    path_interval: 0.1
 
     visualize_maximum_drivable_area: true
 
-    lateral_distance_max_threshold: 2.0
-    longitudinal_distance_min_threshold: 3.0
+    lateral_distance_max_threshold: 0.5
+    longitudinal_distance_min_threshold: 0.5
 
     expected_front_deceleration: -1.0
     expected_rear_deceleration: -1.0
@@ -44,26 +44,26 @@
     lane_change:
       enable_module: true
       # enable_module: false
-      enable_simultaneous_execution: false
+      enable_simultaneous_execution: true
       priority: 4
       max_module_size: 1
 
     pull_out:
-      enable_module: true
+      enable_module: false
       # enable_module: false
       enable_simultaneous_execution: false
       priority: 0
       max_module_size: 1
 
     side_shift:
-      enable_module: true
+      enable_module: false
       # enable_module: false
       enable_simultaneous_execution: false
       priority: 2
       max_module_size: 1
 
     pull_over:
-      enable_module: true
+      enable_module: false
       # enable_module: false
       enable_simultaneous_execution: false
       priority: 1
@@ -72,6 +72,6 @@
     avoidance:
       enable_module: true
       # enable_module: false
-      enable_simultaneous_execution: false
+      enable_simultaneous_execution: true
       priority: 3
       max_module_size: 1
